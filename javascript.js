@@ -10,6 +10,9 @@ function createBox(width,height,backgroundColor) {
     box.style.height = height + 'px';
     box.style.backgroundColor = backgroundColor;
     box.style.border = "1px solid black";
+    box.addEventListener('mouseover', function() {
+        this.style.backgroundColor = 'blue';
+      });
     container.appendChild(box);
     return box;
 }
