@@ -3,12 +3,14 @@
 
 const container = document.querySelector("#container");
 
-const box = document.createElement("box")
-box.classList.add("box");
-box.textContent = "This is a box!";
-box.style.width = "100px";
-box.style.height = "100px";
-box.style.background = "blue";
-box.style.color = "white";
+function createBox(width,height,backgroundColor) {
 
-container.appendChild(box);
+    const box = document.createElement("box")
+    box.classList.add("box");
+    box.style.width = width + 'px';
+    box.style.height = height + 'px';
+    box.style.backgroundColor = backgroundColor;
+    box.style.border = "1px solid black";
+    container.appendChild(box);
+    return box;
+}
