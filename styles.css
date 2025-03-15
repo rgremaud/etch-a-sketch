@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#container {
+    height: 300px;
+    display: flex;
+    background-color: pink;
+    flex: 1;
+}
