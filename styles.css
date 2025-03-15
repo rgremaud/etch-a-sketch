@@ -11,8 +11,9 @@ body {
     background-color: gray; 
     display: flex;
     flex-wrap: wrap;
+    flex-shrink: 1;
 }
 
 .box {
-    flex-shrink: 1;
+    
 }

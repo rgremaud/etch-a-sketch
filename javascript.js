@@ -19,12 +19,12 @@ function createBox(width,height,backgroundColor) {
 // width and height of container is 500px
 // box dimensions to equal 500px/(boxCount+"px") in order to fill full grid
 
-function buildGrid(boxCount,targetWidth,targetHeight,color) {
+function buildGrid(boxCount,color) {
     let i = 0;
-    let width = targetWidth;
-    let height = targetHeight;
+    let width = (500/boxCount)-2;
+    let height = (500/boxCount)-2;
     let backgroundColor = color;
-    for (i = 0; i <= boxCount ** 2; i++) {
+    for (i = 0; i < boxCount ** 2; i++) {
         createBox(width,height,backgroundColor);
     }
 
