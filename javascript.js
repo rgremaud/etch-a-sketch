@@ -11,7 +11,7 @@ function createBox(width,height,backgroundColor) {
     box.style.backgroundColor = backgroundColor;
     box.style.border = "1px solid black";
     box.addEventListener('mouseover', function() {
-        this.style.backgroundColor = 'blue';
+        this.style.backgroundColor = `rgb(${randomNumber(0,255)},${randomNumber(0,255)},${randomNumber(0,255)})`;
       });
     container.appendChild(box);
     return box;
@@ -32,3 +32,13 @@ function buildGrid(boxCount,color) {
     }
 
 }
+
+
+// create a function that generates a random color
+// use rgb(a,b,c) each value can range from 0-255 with some form of random number generator for each value
+
+function randomNumber(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  
+ 
