@@ -60,5 +60,6 @@ function randomNumber(min, max) { // min and max included
  gridButton.addEventListener('click', function() {
     let boxCount = prompt("Please enter an integer between 16 and 100.")
     buildGrid(boxCount);
+    // Need to fix buildGrid function so it clears currenty grid.
  });
   
