@@ -12,3 +12,10 @@ Write a for to call the box function
 
 Dimensions for one square should be 500/16 
 
+createBoxColor
+
+createBoxBlack
+
+buildGrid(# of rows/columns, colorMode)
+if colorMode = color call createBoxColor
+if colorMode = black call createBoxBlack
