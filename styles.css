@@ -9,10 +9,12 @@ body {
     height: 500px;
     width: 500px;
     margin-top: 100px;
+    margin-right: 250px;
     background-color: white; 
     display: flex;
     flex-wrap: wrap;
     flex-shrink: 1;
+    
 }
 
 .tripleButtons {
@@ -20,6 +22,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     margin-right: 10px;
+    margin-top: 100px;
 }
 
 button {
