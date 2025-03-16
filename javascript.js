@@ -28,13 +28,13 @@ function createBoxBlack(width,height,backgroundColor) {
     box.style.height = height + 'px';
     box.style.backgroundColor = "white";
     box.style.border = ".5px solid darkgray";
-    //box.style.opacity = .1;
+    box.style.opacity = .1;
     box.addEventListener('mouseover', function() {
         this.style.backgroundColor = "black";
-        //box.style.opacity = .1;
+        
       });
-    box.addEventListener('mouseover', function() {
-        this.style.opactiy = box.style.opacty + .1;
+    box.addEventListener('mouseleave', function() {
+        box.style.opacity += .1;
     });
     container.appendChild(box);
     return box;
