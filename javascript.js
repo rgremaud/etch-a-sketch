@@ -67,6 +67,12 @@ function buildGridBlack(boxCount) {
 // function to clear all boxes before populating a new grid
 const remove = (itemRemove) => document.querySelectorAll(itemRemove).forEach(element => element.remove());
 
+function clearGrid() {
+    let boxReset = boxCount
+    remove(".box")
+    buildGridColor(boxReset);
+}
+
 
 
 // randomNumber generator for random color on hover w/rgb
