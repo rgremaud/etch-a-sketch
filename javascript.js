@@ -2,7 +2,46 @@ let boxCount = "";
 
 const container = document.querySelector("#container");
 
-// createBoxColor and createBoxBlack
+function randomNumber(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+const remove = (item) => document.querySelectorAll(item).forEach(element => element.remove());
+
+// break out functions so you have createBox, createGrid and createColormode 
+
+function createBox(width,height) { 
+    const box = document.createElement("box")
+    box.classList.add("box");
+    box.style.width = width + 'px';
+    box.style.height = height + 'px';
+    box.style.backgroundColor = "white";
+    //box.style.border = "1px solid darkgray"
+    container.appendChild(box);
+    return box;
+}
+
+function createGrid(boxCount) {
+    remove(".box");
+    let i = 0;
+    let width = (500/boxCount);
+    let height = (500/boxCount);
+    let backgroundColor = "white";
+    for (i = 0; i < boxCount ** 2; i++) {
+        createBox(width,height);
+        }
+    }
+
+// adds color hover to boxes
+const colorMode = (item) => document.querySelectorAll(item).forEach(element => element.addEventListener('mouseover', function() {
+    this.style.backgroundColor = `rgb(${randomNumber(0,255)},${randomNumber(0,255)},${randomNumber(0,255)})`;
+  }))
+
+
+const darkMode = (item) => document.querySelectorAll(item).forEach(element => element.addEventListener('mouseover', function() {
+    this.style.backgroundColor = `black`;
+  }))
+
 
 function createBoxColor(width,height,backgroundColor) {
     const box = document.createElement("box")
@@ -63,21 +102,6 @@ function buildGridBlack(boxCount) {
         }
     }
 
-// function to clear all boxes before populating a new grid
-const remove = (itemRemove) => document.querySelectorAll(itemRemove).forEach(element => element.remove());
-
-function clearGrid() {
-    let boxReset = boxCount;
-    remove(".box");
-    buildGridColor(boxReset);
-}
-
-// randomNumber generator for random color on hover w/rgb
-
-function randomNumber(min, max) { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
 // buttons
   
  const button1 = document.querySelector('gridButton');
@@ -104,7 +128,7 @@ darkMode.addEventListener('click', function()  {
     buildGridBlack(16);
 })
 
- buildGridColor(16);
+ //buildGridColor(16);
  
 
  
