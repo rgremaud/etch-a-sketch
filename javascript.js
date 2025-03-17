@@ -10,7 +10,7 @@ function createBoxColor(width,height,backgroundColor) {
     box.style.width = width + 'px';
     box.style.height = height + 'px';
     box.style.backgroundColor = backgroundColor;
-    box.style.border = ".5px solid darkgray";
+    //box.style.border = ".5px solid darkgray";
     //box.style.opacity = .1;
     box.addEventListener('mouseover', function() {
         this.style.backgroundColor = `rgb(${randomNumber(0,255)},${randomNumber(0,255)},${randomNumber(0,255)})`;
@@ -29,7 +29,7 @@ function createBoxBlack(width,height,backgroundColor) {
     box.style.width = width + 'px';
     box.style.height = height + 'px';
     box.style.backgroundColor = "white";
-    box.style.border = ".5px solid darkgray";
+    //box.style.border = ".5px solid darkgray";
     //box.style.opacity = .1;
     box.addEventListener('mouseover', function() {
         this.style.backgroundColor = "black";
@@ -44,8 +44,8 @@ function createBoxBlack(width,height,backgroundColor) {
 function buildGridColor(boxCount) {
     remove(".box");
     let i = 0;
-    let width = (500/boxCount)-1;
-    let height = (500/boxCount)-1;
+    let width = (500/boxCount);
+    let height = (500/boxCount);
     let backgroundColor = "white";
     for (i = 0; i < boxCount ** 2; i++) {
         createBoxColor(width,height,backgroundColor);
@@ -55,8 +55,8 @@ function buildGridColor(boxCount) {
 function buildGridBlack(boxCount) {
     remove(".box");
     let i = 0;
-    let width = (500/boxCount)-1;
-    let height = (500/boxCount)-1;
+    let width = (500/boxCount);
+    let height = (500/boxCount);
     let backgroundColor = "white";
     for (i = 0; i < boxCount ** 2; i++) {
         createBoxBlack(width,height,backgroundColor);
