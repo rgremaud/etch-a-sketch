@@ -8,4 +8,5 @@ new functions cheatsheet:
 
 createGrid(number) = grid w/rows x columns = number
 darkMode('.box') = enables black
-colorMode(.box) = enables colormode
+colorMode('.box') = enables colormode
+erase('.box') =sets everything to white
