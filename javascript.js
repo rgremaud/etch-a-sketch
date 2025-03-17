@@ -12,6 +12,7 @@ function createBox(width,height) {
     box.style.width = width + 'px';
     box.style.height = height + 'px';
     box.style.backgroundColor = "white";
+    box.style.opacity = `.1`;
     container.appendChild(box);
     return box;
 }
@@ -39,6 +40,10 @@ const darkMode = (item) => document.querySelectorAll(item).forEach(element => el
 
 const erase = (item) => document.querySelectorAll(item).forEach(element => element.style.backgroundColor = "white");
 
+const increaseOpacity = (item) => document.querySelectorAll(item).forEach(element => element.addEventListener('mouseenter', function() { 
+    if (this.style.opacity <= .9) { 
+        this.style.opacity = +this.style.opacity + .1; }
+  }))
 
 // buttons
   
@@ -68,6 +73,7 @@ function start(count) {
     remove(`.box`);
     createGrid(count);
     colorMode(`.box`);
+    increaseOpacity(`.box`)
 }
  
 
