@@ -76,5 +76,4 @@ function start(count) {
     increaseOpacity(`.box`)
 }
  
-
  
