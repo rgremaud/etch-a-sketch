@@ -1,10 +1,10 @@
-//let boxCount = "";
+let boxCount = "";
 
 const container = document.querySelector("#container");
 
-function randomNumber(min, max) { // min and max included 
+function randomNumber(min, max) { 
     return Math.floor(Math.random() * (max - min + 1) + min);
-  }
+}
 
 function createBox(width,height) { 
     const box = document.createElement("box")
@@ -24,7 +24,7 @@ function createGrid(boxCount) {
     for (i = 0; i < boxCount ** 2; i++) {
         createBox(width,height);
         }
-    }
+}
 
 const remove = (item) => document.querySelectorAll(item).forEach(element => element.remove());
 
@@ -42,32 +42,33 @@ const erase = (item) => document.querySelectorAll(item).forEach(element => eleme
 
 // buttons
   
- const button1 = document.querySelector('gridButton');
+ const buttonGridBuild = document.querySelector('gridButton');
  gridButton.addEventListener('click', function() {
     remove('.box')
     let boxCount = prompt("Please enter an number between 16 and 100.")
     start(boxCount);
     });
 
-const button2 = document.querySelector('clearButton');
+const buttonErase = document.querySelector('clearButton');
 clearButton.addEventListener('click', function() {
-    erase('.box');
+    erase(`.box`);
 })
 
-const button3 = document.querySelector('colormode');  
-colorMode.addEventListener('click', function() {
-    colorMode('.box');
+const buttonColorMode = document.querySelector('colorModeButton');  
+colorModeButton.addEventListener('click', function() {
+    colorMode(`.box`);
 })
 
-const button4 = document.querySelector('darkMode');
-darkMode.addEventListener('click', function()  {
-    darkMode('.box');
+const buttonDarkMode = document.querySelector('darkModeButton');
+darkModeButton.addEventListener('click', function()  {
+    darkMode(`.box`);
 })
 
 function start(count) {
+    remove(`.box`);
     createGrid(count);
-    colorMode('.box');
+    colorMode(`.box`);
 }
  
-start(16);
+
  
