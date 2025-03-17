@@ -1,3 +1,5 @@
+let boxCount = "";
+
 const container = document.querySelector("#container");
 
 // createBoxColor and createBoxBlack
@@ -28,14 +30,11 @@ function createBoxBlack(width,height,backgroundColor) {
     box.style.height = height + 'px';
     box.style.backgroundColor = "white";
     box.style.border = ".5px solid darkgray";
-    box.style.opacity = .1;
+    //box.style.opacity = .1;
     box.addEventListener('mouseover', function() {
         this.style.backgroundColor = "black";
         
       });
-    box.addEventListener('mouseleave', function() {
-        box.style.opacity += .1;
-    });
     container.appendChild(box);
     return box;
 }
@@ -68,36 +67,38 @@ function buildGridBlack(boxCount) {
 const remove = (itemRemove) => document.querySelectorAll(itemRemove).forEach(element => element.remove());
 
 function clearGrid() {
-    let boxReset = boxCount
-    remove(".box")
+    let boxReset = boxCount;
+    remove(".box");
     buildGridColor(boxReset);
 }
-
-
 
 // randomNumber generator for random color on hover w/rgb
 
 function randomNumber(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  
- const button = document.querySelector('gridButton');
 
+// buttons
+  
+ const button1 = document.querySelector('gridButton');
  gridButton.addEventListener('click', function() {
     let boxCount = prompt("Please enter an number between 16 and 100.")
     buildGridColor(boxCount);
     });
 
+const button2 = document.querySelector('clearButton');
 clearButton.addEventListener('click', function() {
-    remove(".box")
+    remove(".box");
     buildGridColor(16);
 })
-  
+
+const button3 = document.querySelector('colormode');  
 colorMode.addEventListener('click', function() {
     remove(".box")
     buildGridColor(16);
 })
 
+const button4 = document.querySelector('darkMode');
 darkMode.addEventListener('click', function()  {
     remove(".box")
     buildGridBlack(16);
